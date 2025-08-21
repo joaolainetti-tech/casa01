@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Depósito via PIX</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+        }
+        .pix-key {
+            font-size: 20px;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            user-select: all;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Depósito via PIX</h1>
+<p>Envie o valor desejado para a chave PIX abaixo:</p>
+<div class="pix-key" id="pixKey">12992564537</div>
+<button onclick="copiarPix()">Copiar Chave PIX</button><img alt="QR Code PIX" src="img/pix_qr.png" style="margin-top:20px;max-width:300px;width:100%;border:1px solid #ccc;padding:10px;background:#fff;border-radius:10px;"/>
+<p>Após o pagamento, envie o comprovante para nosso suporte para liberação dos créditos.</p>
+</div>
+<script>
+        function copiarPix() {
+            const pix = document.getElementById('pixKey').innerText;
+            navigator.clipboard.writeText(pix).then(() => {
+                alert("Chave PIX copiada com sucesso!");
+            });
+        }
+    </script>
+</body>
+</html>
